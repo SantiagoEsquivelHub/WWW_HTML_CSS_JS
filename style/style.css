@@ -69,3 +69,12 @@
 .title h2 {
     font-style: italic;
 }
+
+._btn {
+    margin-top: 30px;
+    border-radius: 30px;
+    padding: 10px 30px;
+    background-color: indianred;
+    color: white;
+    font-weight: bold;
+  }

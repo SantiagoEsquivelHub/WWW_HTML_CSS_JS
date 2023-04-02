@@ -10,14 +10,23 @@ const fetch_inventory = () => {
         }
     };
     xhttp.open("GET", theUrl, false);
-    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.send();
+    console.log("jsonnn")
     return inventory
 }
 
 const add_product = () => {
-    const xhttp = new XMLHttpRequest();
-    xhttp.open("POST", theUrl);
-    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhttp.send(JSON.stringify({ "email": "hello@user.com", "response": { "name": "Tester" } }));
+
+    const fs = require('fs');
+
+    const content = 'Some content!';
+
+    fs.writeFile(theUrl, content, err => {
+        if (err) {
+            console.error(err);
+        }
+        // file written successfully
+    });
+
+
 }

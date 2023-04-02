@@ -64,7 +64,7 @@
                         <input type="number" id="stock" name="stock" required>
                     </div>
 
-                    <button type="submit" class="btn_form">¡Create!</button>
+                    <button type="submit" class="_btn">¡Create!</button>
                 </form>
             </div>
 
@@ -73,7 +73,7 @@
 </body>
 
 </html>
-<script src="../helpers/fetch_inventory.js"></script>
+<script src="../helpers/fetch_inventory.js" ></script>
 <script>
 
     var inventory = []
@@ -83,6 +83,8 @@
         inventory = fetch_inventory()
         console.log("inventory: ", inventory)
         add_product()
+        console.log("later")
+
     })
 
     const form = document.getElementById("create_product")
