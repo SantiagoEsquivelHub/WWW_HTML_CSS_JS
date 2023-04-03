@@ -73,8 +73,6 @@
     // Read inventory data
     document.addEventListener("DOMContentLoaded", () => {
         inventory = fetch_inventory()
-        console.log("inventory: ", inventory)
-
     })
 
     const form = document.getElementById("buy_product")
@@ -85,7 +83,6 @@
 
         event.preventDefault()
         let product = inventory.filter(prod => prod.code == code)[0]
-        console.log("product: ", product)
 
         if (!!product) {
             product_info.innerHTML = `
@@ -103,8 +100,13 @@
                 <p>
                     <b>Stock:</b> ${product.stock}
                 </p>
+                    <div class="item_form">
+                        <label for="amount"><b>Amount:</b></label>
+                        <input type="text" id="amount" name="amount" value="1">
+                    </div>
+
                 <br/>
-                <button type="button" class="_btn" value="${product.code}" id="modalInfoBtn" data-bs-toggle="modal" data-bs-target="#modalInfo">
+                <button type="button" class="_btn" value="${product.code}" id="buyBtn" data-bs-toggle="modal" data-bs-target="#modalInfo">
         ¡Buy!
     </button>
             </div>
@@ -114,8 +116,30 @@
         `
         } else {
             product_info.innerHTML = `<h1>Does not exist a product with this code: <b>${code}</b></h1>`
-
         }
+
+        const buyBtn = document.getElementById("buyBtn")
+
+        buyBtn.addEventListener("click", () => {
+            console.log("buy")
+            let amount = document.getElementById("amount").value
+            let total = product.price * amount
+            let sales_item = {
+                date: new Date(),
+                amount,
+                total
+            }
+            console.log("sales_item: ", sales_item)
+            alert("Product just seld")
+            
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
+        })
+
+        //TODO: Update product in inventory
     })
+
+
 
 </script>
