@@ -12,5 +12,19 @@
                 "total": 150000
             }
         ]
+    },
+    {
+        "code": "2020-11111",
+        "name": "Santi Sanchez",
+        "price": "60000",
+        "photo": "https://walmartgt.vtexassets.com/arquivos/ids/228743/Cuaderno-Arimany-Espiral-Universitario-100-H-D-L-3-45962.jpg?v=637750822019300000",
+        "stock": "2",
+        "sales": [
+            {
+                "date": "02-04-2023",
+                "amount": 3,
+                "total": 180000
+            }
+        ]
     }
 ]

@@ -11,7 +11,6 @@ const fetch_inventory = () => {
     };
     xhttp.open("GET", theUrl, false);
     xhttp.send();
-    console.log("jsonnn")
     return inventory
 }
 
@@ -29,4 +28,8 @@ const add_product = () => {
     });
 
 
+}
+
+const search_product = (code, inventory) => {
+    return inventory.filter(prod => prod.code === code)[0]
 }
