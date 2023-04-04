@@ -1,6 +1,6 @@
 const theUrl = "../inventary.json"
 
-const fetch_inventory = () => {
+const fetch_inventory = (theUrl = theUrl) => {
     let inventory = []
     const xhttp = new XMLHttpRequest()
 
@@ -11,23 +11,9 @@ const fetch_inventory = () => {
     };
     xhttp.open("GET", theUrl, false);
     xhttp.send();
+    inventory = inventory.reverse()
+    localStorage.setItem("inventory", JSON.stringify(inventory))
     return inventory
-}
-
-const add_product = () => {
-
-    const fs = require('fs');
-
-    const content = 'Some content!';
-
-    fs.writeFile(theUrl, content, err => {
-        if (err) {
-            console.error(err);
-        }
-        // file written successfully
-    });
-
-
 }
 
 const search_product = (code, inventory) => {

@@ -68,12 +68,15 @@
 <script src="../helpers/fetch_inventory.js"></script>
 <script>
 
+    var inventory_json = []
     var inventory = []
 
     // Read inventory data
     document.addEventListener("DOMContentLoaded", () => {
-        inventory = fetch_inventory()
+        inventory = JSON.parse(localStorage.getItem("inventory"))
+        console.log("inventory: ", inventory)
     })
+
 
     const form = document.getElementById("buy_product")
     const product_info = document.getElementById("product_info")
@@ -131,7 +134,7 @@
             }
             console.log("sales_item: ", sales_item)
             alert("Product just seld")
-            
+
             setTimeout(() => {
                 window.location.reload()
             }, 2000);

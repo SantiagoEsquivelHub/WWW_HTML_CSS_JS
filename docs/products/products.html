@@ -73,7 +73,12 @@
     crossorigin="anonymous"></script>
 <script src="../helpers/fetch_inventory.js"></script>
 <script type='text/javascript'>
-    var inventory = fetch_inventory()
+    var inventory = []
+    document.addEventListener("DOMContentLoaded", () => {
+        inventory = JSON.parse(localStorage.getItem("inventory"))
+        console.log("inventory: ", inventory)
+    })
+
     var products = document.getElementById("products")
 
     window.onload = () => {
@@ -118,11 +123,18 @@
                 // var product = id_products_arr.filter(prod => prod.attributes.value.nodeValue == id_product.value)[0]
                 // console.log("product: ", product)
                 let { name, sales } = search_product(product.value, inventory)
-                sales = sales[sales.length - 1]
-                name = name + "'s Info"
-                let date = sales.date
-                let amount = sales.amount
-                let total = sales.total
+                let date = null
+                let amount = null
+                let total = null
+
+                if (sales.length > 0) {
+                    sales = sales[sales.length - 1]
+                    date = sales.date
+                    amount = sales.amount
+                    total = sales.total
+                }
+
+                name = "Last purchase information of " + name 
 
                 modal_title.innerHTML = `
             <div class="modal-body" id="modal-body">
@@ -134,13 +146,13 @@
             <div class="modal-body" id="modal-body">
                 <div class="text">
                 <p>
-                    <b>Date:</b> ${date}
+                    <b>Date:</b> ${!!date ? date : "There's not information"}
                 </p>
                 <p>
-                    <b>Amount:</b> ${amount}
+                    <b>Amount:</b> ${!!amount ? amount : "There's not information"}
                 </p>
                 <p>
-                    <b>Total:</b> ${total}
+                    <b>Total:</b> ${!!total ? total : "There's not information"}
                 </p>
             </div>`
             })
