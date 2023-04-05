@@ -75,7 +75,7 @@ window.onload = () => {
                     <b>Amount:</b> ${!!amount ? amount : "There's not information"}
                 </p>
                 <p>
-                    <b>Total:</b> $${!!total ? total : "There's not information"}
+                    <b>Total:</b> ${!!total ? "$" + total : "There's not information"}
                 </p>
             </div>`
         })

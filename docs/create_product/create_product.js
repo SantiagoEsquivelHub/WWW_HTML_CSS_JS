@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
             let price = document.getElementById("price").value
             let photo = document.getElementById("img_url").value
             let stock = document.getElementById("stock").value
-            let title = document.getElementById("title")
             let message = document.getElementById("message")
             let message_container = document.getElementById("message_container")
             let _btn = document.getElementById("_btn")
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             localStorage.setItem("inventory", JSON.stringify([product, ...inventory]))
 
-            title.setAttribute("style", "display:none!important")
             form.setAttribute("style", "display:none!important")
             _btn.setAttribute("style", "display:none!important")
             _btn.disabled = true
