@@ -1,13 +1,13 @@
 [
     {
         "code": "2020-19456",
-        "name": "Pepito Perez",
-        "price": "50000",
+        "name": "Red Book",
+        "price": "5000",
         "photo": "https://walmartgt.vtexassets.com/arquivos/ids/228743/Cuaderno-Arimany-Espiral-Universitario-100-H-D-L-3-45962.jpg?v=637750822019300000",
         "stock": "20",
         "sales": [
             {
-                "date": "02-04-2023",
+                "date": "Sunday, April 2, 2023",
                 "amount": 3,
                 "total": 150000
             }
@@ -15,13 +15,13 @@
     },
     {
         "code": "2020-11111",
-        "name": "Santi Sanchez",
-        "price": "60000",
-        "photo": "https://walmartgt.vtexassets.com/arquivos/ids/228743/Cuaderno-Arimany-Espiral-Universitario-100-H-D-L-3-45962.jpg?v=637750822019300000",
+        "name": "Red Pen",
+        "price": "6000",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA4cHsvvXXnt4ZMwqgZZ3mI-BWzhi0U4FVUA4jxL0&s",
         "stock": "2",
         "sales": [
             {
-                "date": "02-04-2023",
+                "date": "Saturday, April 1, 2023",
                 "amount": 3,
                 "total": 180000
             }

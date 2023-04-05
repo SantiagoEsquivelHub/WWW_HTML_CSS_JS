@@ -12,6 +12,7 @@ const fetch_inventory = (theUrl = theUrl) => {
     xhttp.open("GET", theUrl, false);
     xhttp.send();
     inventory = inventory.reverse()
+    console.log(inventory)
     localStorage.setItem("inventory", JSON.stringify(inventory))
     return inventory
 }
